@@ -34,7 +34,7 @@ describe('multiple search tests', () => {
   ]
 
   searchTerms.forEach(searchTerm => {
-    it(`Serch term: ${searchTerm.testData}`, () => {
+    it(`Fill form with email ${searchTerm.testData.email} and password ${searchTerm.testData.password}`, () => {
       cy.visit('https://sanitarskyi-ngx-admin.herokuapp.com/');
 
       cy.get('[alt="Material Dark Theme"]').click();
