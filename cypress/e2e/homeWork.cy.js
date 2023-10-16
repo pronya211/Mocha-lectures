@@ -1,6 +1,6 @@
-describe('multiple search tests', () => {
+describe('Fill users data', () => {
 
-  const searchTerms = [
+  const usersData = [
     {
       testData: {
         email: "testuser1@gmail.com",
@@ -33,15 +33,15 @@ describe('multiple search tests', () => {
     }
   ]
 
-  searchTerms.forEach(searchTerm => {
-    it(`Serch term: ${searchTerm.testData}`, () => {
+  usersData.forEach(userData => {
+    it(`Fill form with email ${userData.testData.email} and password ${userData.testData.password}`, () => {
       cy.visit('https://sanitarskyi-ngx-admin.herokuapp.com/');
 
       cy.get('[alt="Material Dark Theme"]').click();
       cy.get('.menu-title.ng-tns-c141-9').click();
       cy.get('.menu-title.ng-tns-c141-11').click();
-      cy.get('[id="inputEmail1"]').type(searchTerm.testData.email);
-      cy.get('[id="inputPassword2"]').type(searchTerm.testData.password);
+      cy.get('[id="inputEmail1"]').type(userData.testData.email);
+      cy.get('[id="inputPassword2"]').type(userData.testData.password);
     })
   })
 
